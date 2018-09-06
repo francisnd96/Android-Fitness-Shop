@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "401870812161",
+    "firebase_url": "https://fitnessshop-bc9a2.firebaseio.com",
+    "project_id": "fitnessshop-bc9a2",
+    "storage_bucket": "fitnessshop-bc9a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401870812161:android:6664f05d302e1e2a",
+        "android_client_info": {
+          "package_name": "com.example.franc.fitnessshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401870812161-0kkrfasdlj4dd95h37rv68lsappnevu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.franc.fitnessshop",
+            "certificate_hash": "2911306262ca58b751e9e23a3905e5e53e62d594"
+          }
+        },
+        {
+          "client_id": "401870812161-b018fh2su0qk7vsa0dbnd1k5nhodippq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGhUqfjtkdmjQHHXmoshF-99a98xCf9Ao"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401870812161-b018fh2su0qk7vsa0dbnd1k5nhodippq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
