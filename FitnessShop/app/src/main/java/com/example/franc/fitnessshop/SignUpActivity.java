@@ -48,45 +48,66 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         pd = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
 
+        //Handle click
         createAccount.setOnClickListener(this);
+
+        //Handle click
         linkLogin.setOnClickListener(this);
 
     }
-    
+
+    //Registering a user
     public void registerUser(){
+
+        //User email
         String email = editEmail.getText().toString().trim();
+
+        //User password
         String password = editPassword.getText().toString().trim();
+
+        //User name
         name = editName.getText().toString().trim();
 
+        //Email verification
         if(email.length() == 0){
             Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //Password verification
         if(password.length() == 0){
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //Name verification
         if(editName.length() == 0){
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //Loading dialog message
         pd.setMessage("Registering...");
         pd.show();
 
+        //create the user account
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     userProfile();
+
+                    //Send verification email
                     sendEmailVerification();
                     finish();
+
+                    //Progress to next activity
                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 }else{
                     try {
                         throw task.getException();
+
+                        //Validation error messages
                     } catch(FirebaseAuthWeakPasswordException e) {
                         Toast.makeText(SignUpActivity.this, "Registration failed. " + "Your password must be 6 characters long", Toast.LENGTH_LONG).show();
                     } catch(FirebaseAuthInvalidCredentialsException e) {
@@ -104,12 +125,17 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void userProfile(){
+
+        //Request current user information
         FirebaseUser user = auth.getCurrentUser();
+
+        //Set users display name
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName(name).build();
         user.updateProfile(profileUpdates);
     }
 
+    //Send email verification
     private void sendEmailVerification(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){

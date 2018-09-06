@@ -3,6 +3,7 @@ package com.example.franc.fitnessshop.View;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.franc.fitnessshop.Interface.WelcomeClickListener;
@@ -14,9 +15,14 @@ import com.example.franc.fitnessshop.R;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
+    public TextView numRaters;
+    public TextView inStock;
     public TextView itemName;
     public ImageView picture;
     public TextView price;
+    public TextView stock;
+    public RatingBar rating;
+
 
     private WelcomeClickListener wcl;
 
@@ -26,6 +32,11 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         itemName = (TextView)itemView.findViewById(R.id.item_name);
         picture = (ImageView)itemView.findViewById(R.id.item_image);
         price = (TextView)itemView.findViewById(R.id.item_price);
+        stock = (TextView) itemView.findViewById(R.id.stock_num);
+        inStock = (TextView) itemView.findViewById(R.id.inStock);
+        numRaters = (TextView) itemView.findViewById(R.id.numRaters);
+        rating = (RatingBar) itemView.findViewById(R.id.smallRating);
+
 
         itemView.setOnClickListener(this);
 

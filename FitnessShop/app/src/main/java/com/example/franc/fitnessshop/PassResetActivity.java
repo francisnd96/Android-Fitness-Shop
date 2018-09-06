@@ -31,6 +31,7 @@ public class PassResetActivity extends AppCompatActivity implements View.OnClick
         cont.setOnClickListener(this);
     }
 
+    //Sends a password reset
     private void sendPassReset() {
         auth.sendPasswordResetEmail(editEmail.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -44,9 +45,11 @@ public class PassResetActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
+    //When continue is clicked
     @Override
     public void onClick(View v) {
         if(v == cont){
+            //Send password reset
             sendPassReset();
         }
     }

@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         auth = FirebaseAuth.getInstance();
 
+        //Check if user has already logged in
         if(auth.getCurrentUser() != null){
             finish();
             startActivity(new Intent(this, HomeActivity.class));
@@ -55,19 +56,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();
 
+        //If email is empty
         if(email.length() == 0){
             Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //If password is empty
         if(password.length() == 0){
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //Progress dialog
         progDialog.setMessage("Logging in");
         progDialog.show();
 
+        //Sign user in
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -84,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-
+    //Handle click
     @Override
     public void onClick(View v) {
         if(v == btnLogin) {

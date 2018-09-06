@@ -22,9 +22,18 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Refer a friend" />
         <item
+            android:id="@+id/nav_nearby"
+            android:icon="@drawable/ic_location_on_black_24dp"
+            android:title="Nearby Places" />
+        <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_menu_manage"
             android:title="Need help?" />
+        <item
+            android:id="@+id/logoutmenu"
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
+            android:title="Logout"
+            />
     </group>
 
     <item android:title=""

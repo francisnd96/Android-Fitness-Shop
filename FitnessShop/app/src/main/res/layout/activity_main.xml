@@ -1,70 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "@drawable/purpleblurrybg"
-    tools:context="com.example.franc.fitnessshop.MainActivity">
+    >
 
-    <LinearLayout
+    <VideoView
+        android:id="@+id/bgVideoView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline1"
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="58dp"
+        app:layout_constraintGuide_percent="0.15104167"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline2"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="329dp"
+        app:layout_constraintGuide_percent="0.8567708"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="567dp"
+        android:id="@+id/v_guideline3"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="118dp"
+        app:layout_constraintGuide_percent="0.30729166"/>
+
+    <android.support.constraint.Guideline
+        android:layout_width="384dp"
         android:layout_height="wrap_content"
-        android:paddingTop="25dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp">
+        android:id="@+id/h_guideline1"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="326dp"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintGuide_percent="0.5749559"/>
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/btn_help"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_marginTop="0dp"
-            android:textColor="@color/white"
-            android:text="Help" />
-
-
-        <android.support.v7.widget.AppCompatTextView
-            android:textSize="60sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="170dp"
-            android:textColor="@color/white"
-            android:text="Shop" />
-
-        <android.support.v7.widget.AppCompatTextView
-            android:textSize="24sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:text="Buy Great Stuff" />
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/btn_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="470dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:text="Help"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39999998" />
 
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_joinNow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="156dp"
-            android:layout_marginBottom="24dp"
-            android:textSize="20sp"
-            android:padding="12dp"
-            android:text="Join Now"/>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_joinNow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="120dp"
+        android:padding="12dp"
+        android:text="Join Now"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
+        app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/h_guideline1" />
 
-        <TextView android:id="@+id/link_signin"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="SIGN IN"
-            android:gravity="center"
-            android:textSize="20sp"/>
+    <TextView android:id="@+id/link_signin"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintRight_toLeftOf="@+id/v_guideline2"
+    app:layout_constraintTop_toBottomOf="@+id/btn_joinNow"
+    android:layout_marginTop="15dp"
+    app:layout_constraintLeft_toLeftOf="@+id/v_guideline1"
+    android:text="SIGN IN"
+    android:gravity="center"
+    android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
 
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/logo"
+        android:text="Fitness Shop"
+        android:textSize="59dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_width="196dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
 
-    </LinearLayout>
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/logo2"
+        android:layout_width="322dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_transparent"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="Athletics - Electronics - Supplements"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/logo"
+        app:layout_constraintVertical_bias="0.388" />
 
-</ScrollView>
+</android.support.constraint.ConstraintLayout>
+
